@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Night Phase</title>
+</head>
+<body>
+    <h1>Night Phase</h1>
+    <p>Your Identity: {{ identity }}</p>
+    <p>Your Dice Number: {{ dice }}</p>
+    <form action="/wake" method="post">
+        <input type="hidden" name="dice_number" value="{{ dice }}">
+        <button type="submit">Perform Action</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Welcome to the Game</title>
+    <script src="https://cdn.socket.io/4.0.0/socket.io.min.js"></script>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function () {
+            var socket = io();
+
+            socket.on('start_game', function () {
+                // 通过查询参数传递玩家 ID
+                var player_id = parseInt(sessionStorage.getItem('player_id'));
+                window.location.href = '/night?player_id=' + player_id;
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1>Welcome to the Game</h1>
+    <form action="/start" method="post">
+        <input type="number" name="num_players" placeholder="Number of players (5-10)" min="5" max="10" required>
+        <button type="submit">Start Game</button>
+    </form>
+</body>
+</html>
+

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Wake Phase</title>
+</head>
+<body>
+    <h1>Wake Phase</h1>
+    {% if context.target_dice %}
+    <p>Target player dice number: {{ context.target_dice }}</p>
+    {% else %}
+    <p>No special actions possible.</p>
+    {% endif %}
+    <a href="/night?player_id={{ player_id }}">Back to Night</a>
+</body>
+</html>
